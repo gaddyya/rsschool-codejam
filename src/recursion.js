@@ -1,12 +1,21 @@
-function  recursion (tree){
-  const levels = [];
-  const createArray = function(node, depth) {
-    if (!node) return null;
-    if (!levels[depth]) return levels[depth] = [node.value];
-    else return levels[depth].push(node.value);
-    createArray(node.left, depth + 1);
-    createArray(node.right, depth + 1);
-  };
-  createArray(tree, 0);
-  return levels;
-}
+module.exports = function recursion(tree) {
+  const array = [];
+  function internal(node, depth) {
+    if (node && node.value) {
+      if (array[depth]) {
+        array[depth].push(node.value);
+      } else {
+        array[depth] = [node.value];
+      }
+      internal(node.left, depth + 1);
+      internal(node.right, depth + 1);
+    }
+  }
+
+  if (!tree) {
+    throw new Error('Invalid input argument');
+  }
+
+  internal(tree, 0);
+  return array;
+};

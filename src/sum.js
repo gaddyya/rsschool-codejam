@@ -1,4 +1,3 @@
-module.export = function sumOfOther(array) {
-  const sum = array.reduce((a, b) => a + b, 0);
-  return array.map(value => sum - value);
-}
+module.exports = function sum(array) {
+  return array.map((value, index, inArray) => inArray.reduce((a, b) => a + b) - value);
+};
