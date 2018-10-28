@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/gaddyya/rsschool-codejam#readme",
   "dependencies": {
+    "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0"
   },
   "devDependencies": {

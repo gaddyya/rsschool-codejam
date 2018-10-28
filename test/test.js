@@ -1,6 +1,6 @@
 const chai = require('chai');
 
-const sum = require('../src/sum');
+const sum = require('../src/sum.js');
 const make = require('../src/make.js');
 const recursion = require('../src/recursion.js');
 
